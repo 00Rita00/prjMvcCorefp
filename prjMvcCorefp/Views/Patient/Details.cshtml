@@ -1,0 +1,150 @@
+﻿@model prjMvcCorefp.Models.TPatientInfo
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TPatientInfo</h4>
+    <hr />
+    <dl class="row">
+         <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.P照片)
+        </dt>
+        <dd class = "col-sm-10">
+            <img src="~/Images/@Model.P照片" width="200" height="180">
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.P編號)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.P編號)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.P姓名)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.P姓名)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.P性別)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.P性別)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.P身分證字號)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.P身分證字號)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.P出生日期)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.P出生日期)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.P地址)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.P地址)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.P聯絡電話)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.P聯絡電話)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.P聯絡人)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.P聯絡人)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.P電話2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.P電話2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.P餐點)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.P餐點)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.P醫師診斷)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.P醫師診斷)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.P主訴)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.P主訴)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.現在病史)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.現在病史)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.過去病史)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.過去病史)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.家族病史)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.家族病史)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.檢查)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.檢查)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.指示與用藥)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.指示與用藥)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.P建立)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.P建立)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.P更新)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.P更新)
+        </dd>       
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

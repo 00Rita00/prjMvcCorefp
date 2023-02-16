@@ -1,0 +1,138 @@
+﻿@model prjMvcCorefp.Models.TPatientInfo
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>TPatientInfo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit"  enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           @* <div class="form-group">
+                <label asp-for="PId" class="control-label"></label>
+                <input asp-for="PId" class="form-control" />
+                <span asp-validation-for="PId" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="P編號" class="control-label"></label>
+                <input asp-for="P編號" class="form-control" />
+                <span asp-validation-for="P編號" class="text-danger"></span>
+            </div>
+          
+            <div class="form-group">
+                <label asp-for="P姓名" class="control-label"></label>
+                <input asp-for="P姓名" class="form-control" />
+                <span asp-validation-for="P姓名" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="P性別" class="control-label"></label>
+                <input asp-for="P性別" class="form-control" id="PatientGenderInput" hidden />
+                <select id="PatientGenderSelected" name="P性別" class="form-select">
+                    <optgroup label="請選擇生理性別">
+                        <option selected disabled hidden>請選擇生理性別</option>
+                        <option value="男">男</option>
+                        <option value="女">女</option>
+                    </optgroup>
+            <div class="form-group">
+                <label asp-for="P身分證字號" class="control-label"></label>
+                <input asp-for="P身分證字號" class="form-control" />
+                <span asp-validation-for="P身分證字號" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="P出生日期" class="control-label"></label>
+                <input asp-for="P出生日期" class="form-control" />
+                <span asp-validation-for="P出生日期" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="P地址" class="control-label"></label>
+                <input asp-for="P地址" class="form-control" />
+                <span asp-validation-for="P地址" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="P聯絡電話" class="control-label"></label>
+                <input asp-for="P聯絡電話" class="form-control" />
+                <span asp-validation-for="P聯絡電話" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="P聯絡人" class="control-label"></label>
+                <input asp-for="P聯絡人" class="form-control" />
+                <span asp-validation-for="P聯絡人" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="P電話2" class="control-label"></label>
+                <input asp-for="P電話2" class="form-control" />
+                <span asp-validation-for="P電話2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="P餐點" class="control-label"></label>
+                <input asp-for="P餐點" class="form-control" />
+                <span asp-validation-for="P餐點" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="P醫師診斷" class="control-label"></label>
+                <input asp-for="P醫師診斷" class="form-control" />
+                <span asp-validation-for="P醫師診斷" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="P主訴" class="control-label"></label>
+                <input asp-for="P主訴" class="form-control" />
+                <span asp-validation-for="P主訴" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="現在病史" class="control-label"></label>
+                <input asp-for="現在病史" class="form-control" />
+                <span asp-validation-for="現在病史" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="過去病史" class="control-label"></label>
+                <input asp-for="過去病史" class="form-control" />
+                <span asp-validation-for="過去病史" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="家族病史" class="control-label"></label>
+                <input asp-for="家族病史" class="form-control" />
+                <span asp-validation-for="家族病史" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="檢查" class="control-label"></label>
+                <input asp-for="檢查" class="form-control" />
+                <span asp-validation-for="檢查" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="指示與用藥" class="control-label"></label>
+                <input asp-for="指示與用藥" class="form-control" />
+                <span asp-validation-for="指示與用藥" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="P建立" class="control-label"></label>
+                <input asp-for="P建立" class="form-control" />
+                <span asp-validation-for="P建立" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="P更新" class="control-label"></label>
+                <input asp-for="P更新" class="form-control" />
+                <span asp-validation-for="P更新" class="text-danger"></span>
+            </div>
+            
+             <div class="form-group">
+                <label class="control-label">照片</label>
+                <input type="file" class="form-control" name="photo" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="List">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
