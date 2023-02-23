@@ -8,7 +8,7 @@ namespace prjMvcCorefp.ViewModel
     public class CPatientViewModel
     {
         private TPatientInfo _patient;
-        private TPatientInfo patient
+        public TPatientInfo patient
         {
             get { return _patient; }
             set { _patient = value; }
@@ -160,6 +160,14 @@ namespace prjMvcCorefp.ViewModel
             get { return _patient.P照片; }
             set { _patient.P照片 = value; }
         }
+        public string? 紀錄人員
+        {
+            get { return _patient.EIdNavigation.E員工姓名; }
+            set { _patient.EIdNavigation.E員工姓名 = value; }
+        }
         public IFormFile photo { get; set; } //要上傳照片，要用IFormFile屬性。
+       
+        public IEnumerable<TEmployee>? 員工表單 { get; set; }
+        public string txtKeyword { get; set; }
     }
 }

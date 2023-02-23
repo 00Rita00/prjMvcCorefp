@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using prjMvcCorefp.Models;
 using prjMvcCorefp.ViewModel;
+using System.Data;
 using System.Reflection;
 
 namespace prjMvcCorefp.Controllers
@@ -20,13 +21,16 @@ namespace prjMvcCorefp.Controllers
         fpdb2Context db = new fpdb2Context(); //拉到外面共用
         public ActionResult List(CKeywordViewModel vm)
         {
+                       
             IEnumerable<TPatientInfo> datas = null;
 
-           //fpdb2Context db = new fpdb2Context();
+            fpdb2Context db = new fpdb2Context();
 
             if (string.IsNullOrEmpty(vm.txtKeyword))
                 datas = from t in db.TPatientInfos
-                        select t;
+                    select t;
+
+
             else
                 datas = db.TPatientInfos.Where(t => t.P姓名.Contains(vm.txtKeyword) ||
                 t.P性別.Contains(vm.txtKeyword) ||
@@ -34,20 +38,29 @@ namespace prjMvcCorefp.Controllers
                 t.P身分證字號.Contains(vm.txtKeyword) ||
                 t.P出生日期.Contains(vm.txtKeyword) ||
                 t.P聯絡電話.Contains(vm.txtKeyword));
-           
-            
+
+
             return View(datas);
+            
 
         }
 
         public IActionResult Create()
         {
-            return View();
+            CPatientViewModel vm= new CPatientViewModel();
+            IEnumerable<TEmployee> e = db.TEmployees;
+            vm.員工表單 = e;
+            return View(vm);
         }
 
         [HttpPost]
         public IActionResult Create(TPatientInfo p, IFormFile photo)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(p);
+            }
+
             DateTime dt = DateTime.Now;
             Random myRand = new Random();
             string strdt = dt.ToString("yyMMddHHmm");
@@ -77,8 +90,6 @@ namespace prjMvcCorefp.Controllers
         {
             if (id != null)
             {
-
-
                 TPatientInfo delPatientInfo = db.TPatientInfos.FirstOrDefault(t => t.PId == id);
                 //找出要刪除的欄位
 
@@ -114,7 +125,7 @@ namespace prjMvcCorefp.Controllers
                 }
 
 
-               
+
                 x.P編號 = p.P編號;
                 x.P姓名 = p.P姓名;
                 x.P性別 = p.P性別;
@@ -161,7 +172,7 @@ namespace prjMvcCorefp.Controllers
 
             if (id != null)
             {
-                
+
                 TPatientInfo x = db.TPatientInfos.FirstOrDefault(t => t.PId == id);
                 if (x != null)
                     return View(x);

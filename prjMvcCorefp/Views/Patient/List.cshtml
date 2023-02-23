@@ -54,7 +54,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.P餐點)
             </th>
-            <th>
+           @* <th>
                 @Html.DisplayNameFor(model => model.P醫師診斷)
             </th>
             <th>
@@ -74,7 +74,7 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.指示與用藥)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.P建立)
             </th>
@@ -125,8 +125,8 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.P餐點)0
-                </td>
-                <td>
+                    </td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.P醫師診斷)
                 </td>
                 <td>
@@ -146,7 +146,7 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.指示與用藥)
-                </td>
+            </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.P建立)
                 </td>
@@ -154,12 +154,12 @@
                     @Html.DisplayFor(modelItem => item.P更新)
                 </td>
                 <td>
-                           <img src="~/images/@item.P照片" width="180" height="90">
+                        <img src="~/images/@item.P照片" width="200" height="180">
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id=item.PId}) |
                         @Html.ActionLink("Details", "Details", new {  id=item.PId  }) |
-                        @Html.ActionLink("Delete", "Delete", new { id=item.PId})
+                        @Html.ActionLink("Delete", "Delete", new { id=item.PId},new{onclick="return confirm('確定要刪除嗎?')",@class="btn btn-danger"})
                 </td>
             </tr>
 }}

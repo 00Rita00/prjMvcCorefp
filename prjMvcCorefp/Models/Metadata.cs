@@ -10,7 +10,7 @@ namespace prjMvcCorefp.Models
         public Nullable<int> EId { get; set; }
         public Nullable<int> PId { get; set; }
         public Nullable<int> OId { get; set; }
-        [Display (Name="舒張壓")]
+        [Display(Name = "舒張壓")]
         //[Required(ErrorMessage = "必填")]
         public string? N舒張壓 { get; set; }
         [Display(Name = "收縮壓")]
@@ -34,13 +34,13 @@ namespace prjMvcCorefp.Models
         [Display(Name = "其他")]
         //[Required(ErrorMessage = "必填")]
         public string? N其他 { get; set; }
-        [Display(Name = "紀錄時間")]
+        [Display(Name = "建立時間")]
         //[Required(ErrorMessage = "必填")]
         public string? N紀錄時間 { get; set; }
-
+        [Display(Name = "修改時間")]
         public string? N修改時間 { get; set; }
     }
-        public class TOffServiceMetadata
+    public class TOffServiceMetadata
     {
         public int OId { get; set; }
         public int? EId { get; set; }
@@ -87,13 +87,13 @@ namespace prjMvcCorefp.Models
         [Display(Name = "地址")]
         public string? P地址 { get; set; }
         [Display(Name = "住民電話")]
-        [Phone]
+        //[Phone]
         [Required(ErrorMessage = "不可空白")]
         public string? P聯絡電話 { get; set; }
         [Display(Name = "聯絡人")]
         public string? P聯絡人 { get; set; }
         [Display(Name = "聯絡人電話")]
-        [Phone]
+        //[Phone]
         public string? P電話2 { get; set; }
         [Display(Name = "餐點")]
         public string? P餐點 { get; set; }
@@ -116,9 +116,10 @@ namespace prjMvcCorefp.Models
         [Display(Name = "建立")]
         //[DataType(DataType.DateTime)]
         // [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd HH:mm:ss}")]
-        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy/MM/dd HH:mm:ss}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy/MM/dd HH:mm:ss}")]
         public DateTime? P建立 { get; set; }
         [Display(Name = "更新")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy/MM/dd HH:mm:ss}")]
         public DateTime? P更新 { get; set; }
         [Display(Name = "照片")]
         public string? P照片 { get; set; }

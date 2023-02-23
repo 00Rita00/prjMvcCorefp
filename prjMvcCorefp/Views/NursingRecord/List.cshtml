@@ -1,0 +1,161 @@
+﻿@model IEnumerable<prjMvcCorefp.Models.TNursingRecord>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>List</h1>
+@*關鍵字查詢頁面*@
+@using (Html.BeginForm())
+{
+    <p>
+        關鍵字
+        @Html.TextBox("txtKeyword")
+        <input type="submit" value="查詢" />
+    </p>
+}
+<p>
+    <a asp-action="NursingRecordCreate">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+          @*  <th>
+                @Html.DisplayNameFor(model => model.NId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OId)
+            </th>*@
+             <th>
+                序
+            </th>
+            <th>
+               姓名
+            </th>
+            <th>
+                身分證字號
+            </th>
+            <th>
+                醫師診斷
+            </th>
+            <th>
+                用藥與指示
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.N舒張壓)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.N收縮壓)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.N體溫)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.N脈搏)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.N呼吸)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.N傷口)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.N三管)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.N其他)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.N紀錄時間)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.N修改時間)
+            </th>
+            <th>
+               記錄人員
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @{
+            int count = 0; 
+            foreach (var item in Model) {
+                count++;
+                    <tr>
+                    <td>
+                       @count
+                    </td>
+                @*<td>
+                @Html.DisplayFor(modelItem => item.NId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OId)
+            </td>*@
+            <td>
+                 @Html.DisplayFor(modelItem => item.OIdNavigation.PIdNavigation.P姓名)
+             </td>
+            <td>
+                 @Html.DisplayFor(modelItem => item.OIdNavigation.PIdNavigation.P身分證字號)
+            </td>
+            <td>
+                 @Html.DisplayFor(modelItem => item.OIdNavigation.O醫師診斷)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OIdNavigation.O指示與用藥)
+            </td>
+            
+                <td>
+                    @Html.DisplayFor(modelItem => item.N舒張壓)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.N收縮壓)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.N體溫)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.N脈搏)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.N呼吸)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.N傷口)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.N三管)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.N其他)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.N紀錄時間)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.N修改時間)
+                </td>
+                 <td>
+                        @Html.DisplayFor(modelItem => item.EIdNavigation.E員工姓名)
+                 </td>
+                <td>
+                        @Html.ActionLink("Edit", "NursingRecordEdit", new { id=item.NId }) |
+                        @Html.ActionLink("Details", "Details", new { id=item.NId }) |
+                        @Html.ActionLink("Delete", "Delete", new {  id=item.NId }, new{onclick="return confirm('確定要刪除嗎?')"})
+                </td>
+            </tr>
+}}
+    </tbody>
+</table>
